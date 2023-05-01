@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--light);
+}
+
+.navbarContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  margin-left: 1rem;
+  padding: 0.3rem;
+}
