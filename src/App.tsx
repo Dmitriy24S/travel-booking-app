@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import Home from './pages/Home/Home'
 import Hotel from './pages/Hotel/Hotel'
 import List from './pages/List/List'

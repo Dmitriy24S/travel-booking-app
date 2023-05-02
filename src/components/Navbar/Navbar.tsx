@@ -1,11 +1,6 @@
-import React from 'react'
 import styles from './Navbar.module.scss'
 
-type Props = {
-  //
-}
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContainer}>

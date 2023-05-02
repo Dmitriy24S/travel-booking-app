@@ -5,6 +5,9 @@
   position: relative;
   background-color: #0063f3;
   color: var(--light);
+  &.listMode {
+    padding-bottom: 1rem;
+  }
 }
 
 .list {

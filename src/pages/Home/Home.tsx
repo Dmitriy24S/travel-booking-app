@@ -1,17 +1,13 @@
-import React from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
+
 import styles from './Home.module.scss'
 
-type Props = {
-  //
-}
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <>
       <Navbar />
-      <Header />
+      <Header page='home' />
       <div className={styles.homeContainer}>
         {/*  */}
         {/*  */}
