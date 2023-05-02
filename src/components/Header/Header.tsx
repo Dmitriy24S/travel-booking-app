@@ -221,6 +221,7 @@ const Header = (props: Props) => {
             </div>
           )}
         </div>
+        <button className={styles.searchButton}>Search</button>
       </div>
     </div>
   )

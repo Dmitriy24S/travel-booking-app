@@ -61,7 +61,7 @@
   gap: 1rem;
   padding: 10px;
   border-radius: 14px;
-  border: 5px solid #0063f3;
+  outline: 5px solid #0063f3;
   background-color: var(--light);
   position: absolute;
   z-index: 1;
@@ -165,4 +165,11 @@
     text-align: center;
     font-weight: 600;
   }
+}
+
+.searchButton {
+  background-color: #0063f3;
+  color: var(--light);
+  border-radius: 10px;
+  padding: 0.7rem;
 }
