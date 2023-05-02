@@ -57,7 +57,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  // gap: 10px;
+  gap: 1rem;
   padding: 10px;
   border-radius: 14px;
   border: 5px solid #0063f3;
@@ -75,6 +76,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 39px;
 
   .icon {
     color: hsl(0, 0%, 76%);
@@ -104,4 +106,63 @@
 
 .searchItemText {
   color: hsl(0, 0%, 76%);
+  min-width: 16ch;
+}
+
+.dateRangeContainer {
+  position: absolute;
+  top: 100%;
+  left: -3rem;
+  z-index: 5;
+  background-color: var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  // filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.2));
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 5;
+  background-color: var(--light);
+  color: var(--dark);
+  border-radius: 8px;
+  overflow: hidden;
+  // filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.2));
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  ~ .optionItem {
+    margin-top: 1rem;
+  }
+}
+
+.optionButtons {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+  button {
+    background-color: #0063f3;
+    color: var(--light);
+    border-radius: 5px;
+  }
+
+  span {
+    min-width: 3ch;
+    text-align: center;
+    font-weight: 600;
+  }
 }
