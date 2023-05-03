@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+}
+
+.propertyItem {
+  border-radius: 8px;
+  min-width: 150px;
+  flex: 1;
+}
+
+.image {
+  object-fit: cover;
+  min-width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  width: 100%; // centers img? even though already had min width?
+}
+
+.details {
+  border-radius: 0.5rem;
+  color: var(--dark);
+}
