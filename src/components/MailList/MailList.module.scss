@@ -1,0 +1,52 @@
+.mailList {
+  margin-top: 2rem;
+
+  h3 {
+    font-weight: 500;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+
+  background-color: #013a91;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.inputForm {
+  margin-top: 1rem;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0.7rem;
+  flex-direction: column;
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+
+  input {
+    padding: 0.7rem;
+    min-width: 300px;
+    border-radius: 4px;
+    border: none;
+    min-height: 51px;
+  }
+}
+
+.submitButton {
+  background-color: #0063f3;
+  text-align: center;
+  padding: 1rem 1.3rem;
+  border-radius: 4px;
+}
+
+.checkboxContainer {
+  display: flex;
+  gap: 5px;
+}
