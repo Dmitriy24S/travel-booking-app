@@ -1,0 +1,22 @@
+.title {
+  margin-bottom: 1rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.signInButton {
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--light);
+  margin: 0 auto;
+  transition: background-color 120ms ease;
+  &:hover,
+  &:focus-visible {
+    color: var(--dark);
+    background-color: var(--light);
+    border: 1px solid transparent;
+  }
+}
