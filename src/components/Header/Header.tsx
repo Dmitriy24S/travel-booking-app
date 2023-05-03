@@ -12,35 +12,41 @@ type Props = {
 
 const Header = ({ page = undefined }: Props) => {
   return (
-    <div className={[styles.header, page !== 'home' ? styles.listMode : ''].join(' ')}>
-      <div className={styles.list}>
-        <div className={[styles.listItem, styles.active].join(' ')}>
-          <FaBed />
-          <span>Stays</span>
+    <div className={styles.header}>
+      <div
+        className={[styles.headerContainer, page !== 'home' ? styles.listMode : ''].join(
+          ' '
+        )}
+      >
+        <div className={styles.list}>
+          <div className={[styles.listItem, styles.active].join(' ')}>
+            <FaBed />
+            <span>Stays</span>
+          </div>
+          <div className={styles.listItem}>
+            <FaPlane />
+            <span>Flights</span>
+          </div>
+          <div className={styles.listItem}>
+            <FaCar />
+            <span>Car rentals</span>
+          </div>
+          <div className={styles.listItem}>
+            <FaPlaceOfWorship />
+            <span>Attractions</span>
+          </div>
+          <div className={styles.listItem}>
+            <FaTaxi />
+            <span>Airport taxis</span>
+          </div>
         </div>
-        <div className={styles.listItem}>
-          <FaPlane />
-          <span>Flights</span>
-        </div>
-        <div className={styles.listItem}>
-          <FaCar />
-          <span>Car rentals</span>
-        </div>
-        <div className={styles.listItem}>
-          <FaPlaceOfWorship />
-          <span>Attractions</span>
-        </div>
-        <div className={styles.listItem}>
-          <FaTaxi />
-          <span>Airport taxis</span>
-        </div>
+        {page === 'home' && (
+          <>
+            <Details />
+            <Search />
+          </>
+        )}
       </div>
-      {page === 'home' && (
-        <>
-          <Details />
-          <Search />
-        </>
-      )}
     </div>
   )
 }

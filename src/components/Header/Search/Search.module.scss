@@ -1,9 +1,8 @@
 .search {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  // gap: 10px;
-  gap: 1rem;
+  gap: 1rem; // 16px
   padding: 10px;
   border-radius: 14px;
   outline: 5px solid #0063f3;
@@ -14,9 +13,11 @@
   left: 2rem;
   right: 2rem;
   margin: 0 auto;
-  max-width: 800px;
+  @media (min-width: 898px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
-
 .searchItem {
   position: relative;
   display: flex;
@@ -36,11 +37,18 @@
   transform: translateY(-50%);
 }
 
+.searchIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .searchInput {
   padding: 10px;
   border: none;
   border-radius: 6px;
-  padding-left: 40px;
+  padding-left: 27px;
   &::placeholder {
     color: hsl(0, 0%, 76%);
   }
@@ -52,6 +60,7 @@
 .searchItemText {
   color: hsl(0, 0%, 76%);
   min-width: 16ch;
+  text-align: left;
 }
 
 .dateRangeContainer {

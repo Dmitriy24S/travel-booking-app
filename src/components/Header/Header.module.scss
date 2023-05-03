@@ -1,10 +1,16 @@
 .header {
+  background-color: #0063f3;
+  color: var(--light);
+}
+
+.headerContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
   padding: 1rem;
   border-bottom: 5px solid rgba(80, 6, 110, 0.05);
   padding-bottom: 65px;
-  position: relative;
-  background-color: #0063f3;
-  color: var(--light);
+
   &.listMode {
     padding-bottom: 1rem;
   }
