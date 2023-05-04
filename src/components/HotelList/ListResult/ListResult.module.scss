@@ -1,0 +1,96 @@
+.list {
+  flex: 3;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.item {
+  margin-bottom: 2rem;
+}
+
+.image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  // border-radius: 8px;
+  border-radius: 5px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+
+.distance {
+  color: gray;
+}
+
+.taxi {
+  background-color: rgb(5, 149, 0);
+  padding: 5px;
+  border-radius: 8px;
+  color: var(--light);
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  font-weight: 700;
+  margin: 0.2rem 0;
+}
+
+.features {
+}
+
+.cancelation {
+  color: rgb(5, 149, 0);
+  font-weight: 700;
+}
+
+.cancelationSubtitle {
+  color: rgb(5, 149, 0);
+}
+
+.cardFooter {
+  margin-top: 0.7rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .rating {
+    // TODO: repeat style
+    background-color: #0147b0;
+    padding: 7px;
+    font-weight: 600;
+    color: var(--light);
+    border-radius: 5px;
+    min-height: 25px;
+    min-width: 25px;
+  }
+  .ratingText {
+    font-weight: 600;
+  }
+}
+
+.priceContainer {
+  text-align: right;
+  .price {
+    font-weight: 700;
+  }
+}
+.button {
+  width: 100%;
+  background-color: #0147b0;
+  padding: 0.7rem;
+  font-weight: 600;
+  color: var(--light);
+  margin-top: 0.7rem;
+  border-radius: 5px;
+}

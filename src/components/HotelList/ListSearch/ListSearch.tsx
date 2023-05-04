@@ -1,24 +1,33 @@
 import format from 'date-fns/format'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { DateRange, Range } from 'react-date-range'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { FaBed, FaCalendarDay } from 'react-icons/fa'
-
-import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import useOnClickOutside from '../../../hooks/useOnClickOutside'
-import styles from './Search.module.scss'
+import styles from './ListSearch.module.scss'
 
-const Search = () => {
-  const navigate = useNavigate()
+const defaultOptions = {
+  adult: 1,
+  children: 0,
+  room: 1,
+}
+
+type OptionsType = typeof defaultOptions
+
+const defaultDate: Range = {
+  startDate: new Date(),
+  endDate: new Date(),
+  key: 'selection',
+}
+
+const ListSearch = () => {
+  const location = useLocation()
+  console.log({ location })
+
   const [destination, setDestination] = useState('')
-  const [date, setDate] = useState<Range[]>([
-    {
-      startDate: new Date(),
-      // endDate: null,
-      endDate: new Date(),
-      key: 'selection',
-    },
-  ])
+  const [date, setDate] = useState<Range[]>([defaultDate])
+  const [options, setOptions] = useState<OptionsType>(defaultOptions)
 
   const [showDateRange, setShowDateRange] = useState(false)
   const datePickerRef = useRef<HTMLDivElement>(null)
@@ -34,11 +43,8 @@ const Search = () => {
     setShowOptions(!showOptions)
   }
 
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  })
+  useOnClickOutside(datePickerRef, showDateRange, toggleShowDateRange)
+  useOnClickOutside(optionsRef, showOptions, toggleShowOptions)
 
   function incrementAdult() {
     setOptions({ ...options, adult: options.adult + 1 })
@@ -67,12 +73,19 @@ const Search = () => {
     }
   }
 
-  useOnClickOutside(datePickerRef, showDateRange, toggleShowDateRange)
-  useOnClickOutside(optionsRef, showOptions, toggleShowOptions)
+  useEffect(() => {
+    if (location?.state?.destination) {
+      setDestination(location.state.destination)
+    }
 
-  const handleSearch = () => {
-    navigate('/hotels', { state: { destination, date, options } })
-  }
+    if (location?.state?.options) {
+      setOptions(location.state.options)
+    }
+
+    if (location?.state?.date) {
+      setDate(location.state.date)
+    }
+  }, [location.state])
 
   const childrenAmountText = options.children === 1 ? 'child' : 'children'
   const childrenText =
@@ -81,24 +94,25 @@ const Search = () => {
   const optionsText = `${options.adult} adult ${childrenText} · ${options.room} ${roomText}`
 
   return (
-    <div className={styles.search}>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Search</h2>
+      <label htmlFor='search-input' className={styles.title}>
+        Destination
+      </label>
       <div className={styles.searchItem}>
         <FaBed className={[styles.icon, styles.searchIcon].join(' ')} />
         <input
-          type='text'
-          name='header-search'
-          id='header-search'
-          placeholder='Where are you going?'
+          type='search'
+          name='search-input'
+          id='search-input'
+          placeholder={destination || 'Your destination'}
           className={styles.searchInput}
           value={destination}
           onChange={(e) => setDestination(e.target.value)}
         />
       </div>
-      <div
-        ref={datePickerRef}
-        // onBlur={() => setShowDateRange(false)}
-        className={styles.searchItem}
-      >
+      <h4>Check-in Date</h4>
+      <div ref={datePickerRef} className={styles.searchItem}>
         <FaCalendarDay className={styles.icon} />
         <button
           type='button'
@@ -106,8 +120,6 @@ const Search = () => {
           onClick={toggleShowDateRange}
           className={styles.searchItemText}
         >
-          {/* {date[0]?.startDate?.toDateString()} to {date[0]?.endDate?.toDateString()} // Tue May 02 2023 */}
-          {/* Format to month/day/year: 05/02/2023 to 05/02/2023 */}
           {date[0].startDate && date[0].endDate
             ? `${format(date[0]?.startDate, 'MM/dd/yyyy')} to ${format(
                 date[0]?.endDate,
@@ -127,6 +139,21 @@ const Search = () => {
           </div>
         )}
       </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor='min-price' className={styles.label}>
+          Min. Price
+          <div>per night</div>
+        </label>
+        <input type='number' min={1} name='min-price' id='min-price' defaultValue={100} />
+      </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor='max-price'>
+          Max. Price
+          <div>per night</div>
+        </label>
+        <input type='number' name='max-price' id='max-price' min={1} defaultValue={200} />
+      </div>
+      <h4>Options</h4>
       <div ref={optionsRef} className={styles.searchItem}>
         <BsFillPersonFill className={styles.icon} />
         <button
@@ -189,11 +216,9 @@ const Search = () => {
           </div>
         )}
       </div>
-      <button className={styles.searchButton} type='button' onClick={handleSearch}>
-        Search
-      </button>
+      <button className={styles.searchButton}>Search</button>
     </div>
   )
 }
 
-export default Search
+export default ListSearch
