@@ -5,11 +5,12 @@
   gap: 1rem; // 16px
   padding: 10px;
   border-radius: 14px;
-  outline: 5px solid #0063f3;
+  // outline: 5px solid var(--blueLight);
+  outline: 8px solid var(--yellow);
   background-color: var(--light);
   position: absolute;
   z-index: 1;
-  top: 90%;
+  top: 92%;
   left: 2rem;
   right: 2rem;
   margin: 0 auto;

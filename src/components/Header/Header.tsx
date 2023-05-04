@@ -18,28 +18,38 @@ const Header = ({ page = undefined }: Props) => {
           ' '
         )}
       >
-        <div className={styles.list}>
-          <div className={[styles.listItem, styles.active].join(' ')}>
-            <FaBed />
-            <span>Stays</span>
-          </div>
-          <div className={styles.listItem}>
-            <FaPlane />
-            <span>Flights</span>
-          </div>
-          <div className={styles.listItem}>
-            <FaCar />
-            <span>Car rentals</span>
-          </div>
-          <div className={styles.listItem}>
-            <FaPlaceOfWorship />
-            <span>Attractions</span>
-          </div>
-          <div className={styles.listItem}>
-            <FaTaxi />
-            <span>Airport taxis</span>
-          </div>
-        </div>
+        <ul className={styles.list}>
+          <li>
+            <a href='#' className={[styles.listItem, styles.active].join(' ')}>
+              <FaBed />
+              <span>Stays</span>
+            </a>
+          </li>
+          <li>
+            <a href='#' className={styles.listItem}>
+              <FaPlane />
+              <span>Flights</span>
+            </a>
+          </li>
+          <li>
+            <a href='#' className={styles.listItem}>
+              <FaCar />
+              <span>Car rentals</span>
+            </a>
+          </li>
+          <li>
+            <a href='#' className={styles.listItem}>
+              <FaPlaceOfWorship />
+              <span>Attractions</span>
+            </a>
+          </li>
+          <li>
+            <a href='#' className={styles.listItem}>
+              <FaTaxi />
+              <span>Airport taxis</span>
+            </a>
+          </li>
+        </ul>
         {page === 'home' && (
           <>
             <Details />

@@ -6,6 +6,10 @@
 html {
   --light: hsl(0, 0%, 100%);
   --dark: hsl(0, 0%, 14%);
+  --blueLight: hsl(216, 100%, 48%);
+  --blueDark: hsl(216, 99%, 35%);
+  --grayLight: hsl(0, 0%, 76%);
+  --yellow: hsl(43, 100%, 50%);
   --navbarHeight: 3rem;
 }
 
@@ -34,6 +38,7 @@ button {
 }
 
 a {
+  display: block;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -45,6 +50,11 @@ input {
   font-family: inherit;
   font-size: inherit;
   border: none;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 #root {

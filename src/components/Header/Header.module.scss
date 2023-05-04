@@ -1,5 +1,5 @@
 .header {
-  background-color: #0063f3;
+  background-color: var(--blueDark);
   color: var(--light);
 }
 
@@ -40,7 +40,8 @@
   border: 1px solid transparent;
   transition: background-color 80ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
