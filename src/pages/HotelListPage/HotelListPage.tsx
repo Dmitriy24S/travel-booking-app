@@ -1,3 +1,4 @@
+import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import HotelList from '../../components/HotelList/HotelList'
 import MainContentLayout from '../../components/Layout/MainContentLayout'
@@ -11,6 +12,7 @@ function HotelListPage() {
       <MainContentLayout>
         <HotelList />
       </MainContentLayout>
+      <Footer />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import Featured from '../../components/Featured/Featured'
 import FeaturedProperties from '../../components/FeaturedProperties/FeaturedProperties'
+import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import MainContentLayout from '../../components/Layout/MainContentLayout'
 import MailList from '../../components/MailList/MailList'
@@ -17,6 +18,7 @@ const Home = () => {
         <FeaturedProperties />
       </MainContentLayout>
       <MailList />
+      <Footer />
     </>
   )
 }
