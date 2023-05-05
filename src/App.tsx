@@ -1,16 +1,38 @@
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Home from './pages/Home/Home'
-import HotelListPage from './pages/HotelListPage/HotelListPage'
-import HotelPage from './pages/HotelPage/HotelPage'
+const Home = lazy(() => import('./pages/Home/Home'))
+const HotelListPage = lazy(() => import('./pages/HotelListPage/HotelListPage'))
+const HotelPage = lazy(() => import('./pages/HotelPage/HotelPage'))
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/hotels' element={<HotelListPage />} />
-        <Route path='/hotels/:id' element={<HotelPage />} />
+        <Route
+          path='/'
+          element={
+            <Suspense>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/hotels'
+          element={
+            <Suspense>
+              <HotelListPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/hotels/:id'
+          element={
+            <Suspense>
+              <HotelPage />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )

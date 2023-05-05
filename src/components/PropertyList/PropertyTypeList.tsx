@@ -35,7 +35,7 @@ const PropertyTypeList = () => {
       <div className={styles.wrapper}>
         {propertyTypeList.map((item) => (
           <div className={styles.propertyItem} key={item.name}>
-            <img src={item.img} alt={item.name} className={styles.image} />
+            <img src={item.img} alt={item.name} className={styles.image} loading='lazy' />
             <div className={styles.details}>
               <h3>{item.name}</h3>
               <p>{item.details}</p>

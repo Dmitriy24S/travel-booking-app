@@ -23,7 +23,7 @@ const Featured = () => {
     <div className={styles.featured}>
       {featuredItems.map((item) => (
         <div className={styles.featuredItem} key={item.title}>
-          <img src={item.img} alt={item.title} className={styles.image} />
+          <img src={item.img} alt={item.title} className={styles.image} loading='lazy' />
           <div className={styles.details}>
             <h1>{item.title}</h1>
             <p>{item.description}</p>

@@ -46,14 +46,20 @@ const FeaturedProperties = () => {
       <div className={styles.properties}>
         {featuredProperties.map((property) => (
           <div className={styles.property} key={property.name}>
-            <img src={property.img} alt={property.name} className={styles.image} />
+            <img
+              src={property.img}
+              alt={property.name}
+              className={styles.image}
+              loading='lazy'
+            />
             <h4 className={styles.name}>{property.name}</h4>
-            {/* // TODO epilipsis oeverlow text name */}
             <p className={styles.location}>{property.location}</p>
             <p className={styles.price}> Starting from {property.price}</p>
-            <div className={styles.ratingContainer}>
-              <div className={styles.rating}>{property.rating}</div>
-              <p className={styles.ratingText}>{property.ratingText}</p>
+            <div className={styles.betweenContainer}>
+              <div className={styles.ratingContainer}>
+                <div className={styles.rating}>{property.rating}</div>
+                <p className={styles.ratingText}>{property.ratingText}</p>
+              </div>
               <p className={styles.reviewsCount}>{property.reviewsCount} reviews</p>
             </div>
           </div>
