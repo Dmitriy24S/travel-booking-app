@@ -7,8 +7,11 @@ html {
   --light: hsl(0, 0%, 100%);
   --dark: hsl(0, 0%, 14%);
   --blueLight: hsl(216, 100%, 48%);
+  --blueLight2: hsl(206, 65%, 50%);
+  --blueLight3: hsl(215, 100%, 91%);
   --blueDark: hsl(216, 99%, 35%);
   --grayLight: hsl(0, 0%, 76%);
+  --gray: hsl(0, 0%, 39%);
   --yellow: hsl(43, 100%, 50%);
   --navbarHeight: 3rem;
 }

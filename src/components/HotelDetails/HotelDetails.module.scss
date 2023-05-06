@@ -1,0 +1,144 @@
+.header {
+  margin-bottom: 0.5rem;
+  @media (min-width: 800px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .bookButton {
+    padding: 15px;
+    background-color: var(--blueDark);
+    color: var(--light);
+    border-radius: 5px;
+    // TODO: shared styles?
+    margin: 0.2rem 0;
+    margin-bottom: 0.4rem;
+    width: 100%;
+    &:hover,
+    &:focus-visible {
+      opacity: 0.9;
+    }
+    @media (min-width: 800px) {
+      width: auto;
+    }
+  }
+}
+
+.headerInfo {
+  font-weight: 600;
+
+  .name {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--gray);
+    svg {
+      margin-right: 0.2rem;
+    }
+  }
+
+  .locationSubtitle {
+    color: var(--blueLight2);
+    margin-bottom: 0.5rem;
+  }
+
+  .bonusOffer {
+    color: green;
+    // color: rgb(5, 149, 0);
+    margin-bottom: 0.5rem;
+  }
+}
+
+.images {
+  // display: flex;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 5px;
+  justify-items: center;
+  margin-bottom: 1.5rem;
+
+  img {
+    border-radius: 3px;
+    // max-width: 320px;
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+
+  .hotelDetails {
+    // padding: 1rem;
+    margin-bottom: 0.7rem;
+    // max-width: 38rem;
+    min-width: 300px;
+    flex: 2;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+  }
+}
+
+.bookingDetails {
+  background-color: var(--blueLight3);
+  min-width: 300px;
+  flex: 1;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 4rem;
+
+  .title {
+    margin-bottom: 0.7rem;
+    color: var(--gray);
+  }
+
+  .description {
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .price {
+    font-size: 1.8rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+
+    span {
+      color: var(--dark);
+      font-weight: 700;
+    }
+  }
+
+  .bookButton {
+    padding: 15px;
+    background-color: var(--blueDark);
+    color: var(--light);
+    border-radius: 5px;
+    // TODO: shared styles?
+    // margin: 0.2rem 0;
+    // margin-bottom: 0.4rem;
+    width: 100%;
+    &:hover,
+    &:focus-visible {
+      opacity: 0.9;
+    }
+  }
+}
