@@ -3,6 +3,7 @@ import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-ico
 
 import { useRef } from 'react'
 
+import { useImageSliderKeyboardNavigation } from '../../hooks/useImageSliderKeyboardNavigation'
 import styles from './ImageSlider.module.scss'
 
 interface Props {
@@ -27,6 +28,13 @@ const ImageSlider: React.FC<Props> = ({
       toggleShowImageSlider()
     }
   }
+
+  useImageSliderKeyboardNavigation({
+    imageIndex,
+    togglePrevImage,
+    toggleNextImage,
+    toggleShowImageSlider,
+  })
 
   return (
     <div className={styles.sliderContainer}>
