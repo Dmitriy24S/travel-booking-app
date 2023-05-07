@@ -4,6 +4,7 @@ import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-ico
 import { useRef } from 'react'
 
 import { useImageSliderKeyboardNavigation } from '../../hooks/useImageSliderKeyboardNavigation'
+import { useLockFocus } from '../../hooks/useLockFocus'
 import styles from './ImageSlider.module.scss'
 
 interface Props {
@@ -22,6 +23,7 @@ const ImageSlider: React.FC<Props> = ({
   toggleNextImage,
 }) => {
   const sliderContainerRef = useRef<HTMLDivElement>(null)
+  useLockFocus(sliderContainerRef)
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === sliderContainerRef.current) {
