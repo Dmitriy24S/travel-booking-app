@@ -4,7 +4,7 @@ const useActiveElement = () => {
   console.count('useActiveElement')
   const [active, setActive] = useState(document.activeElement)
 
-  const handleFocusIn = (event: FocusEvent) => {
+  const handleFocusIn = () => {
     setActive(document.activeElement)
   }
 
