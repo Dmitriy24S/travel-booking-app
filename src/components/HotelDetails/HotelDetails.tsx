@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 
+import ImageSlider from '../ImageSlider/ImageSlider'
 import styles from './HotelDetails.module.scss'
 
 const photos = [
@@ -24,6 +26,34 @@ const photos = [
 ]
 
 const HotelDetails = () => {
+  const [showImageSlider, setShowImageSlider] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+
+  const toggleShowImageSlider = () => {
+    setShowImageSlider(!showImageSlider)
+  }
+
+  const showImage = (index: number) => {
+    setSelectedImageIndex(index)
+    setShowImageSlider(true)
+  }
+
+  const toggleNextImage = (index: number) => {
+    if (index < photos.length - 1) {
+      setSelectedImageIndex((prev) => prev + 1)
+    } else {
+      setSelectedImageIndex(0) // loop to start
+    }
+  }
+
+  const togglePrevImage = (index: number) => {
+    if (index > 0) {
+      setSelectedImageIndex((prev) => prev - 1)
+    } else {
+      setSelectedImageIndex(photos.length - 1) // loop to end
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -40,9 +70,23 @@ const HotelDetails = () => {
         </div>
       </div>
       <div className={styles.images}>
-        {photos.map((photo) => (
-          <img src={photo.src} alt='hotel' key={photo.src} />
+        {photos.map((photo, index) => (
+          <img
+            src={photo.src}
+            alt='hotel'
+            key={photo.src}
+            onClick={() => showImage(index)}
+          />
         ))}
+        {showImageSlider && (
+          <ImageSlider
+            data={photos}
+            imageIndex={selectedImageIndex}
+            toggleShowImageSlider={toggleShowImageSlider}
+            toggleNextImage={toggleNextImage}
+            togglePrevImage={togglePrevImage}
+          />
+        )}
       </div>
       <div className={styles.info}>
         <div className={styles.hotelDetails}>

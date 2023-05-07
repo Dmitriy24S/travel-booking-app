@@ -1,0 +1,59 @@
+.sliderContainer {
+  .sliderBackdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 899;
+  }
+
+  .sliderContent {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: fixed;
+    z-index: 900;
+    inset: 0;
+    display: flex;
+    place-items: center;
+
+    .sliderImage {
+      width: 80%;
+      height: 80%;
+      max-height: unset;
+      margin: 0 auto;
+      overflow: hidden;
+      cursor: unset;
+    }
+
+    button {
+      color: white;
+      opacity: 0.7;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+      }
+    }
+  }
+
+  .sliderCloseButton {
+    position: fixed;
+    right: 1rem;
+    top: 2rem;
+  }
+
+  .sliderLeftButton {
+    position: fixed;
+    left: 1rem;
+  }
+
+  .sliderRightButton {
+    position: fixed;
+    right: 1rem;
+  }
+}

@@ -73,6 +73,7 @@
     max-height: 200px;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
   }
 }
 
@@ -133,8 +134,6 @@
     color: var(--light);
     border-radius: 5px;
     // TODO: shared styles?
-    // margin: 0.2rem 0;
-    // margin-bottom: 0.4rem;
     width: 100%;
     &:hover,
     &:focus-visible {
