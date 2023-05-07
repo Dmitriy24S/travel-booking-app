@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 
+import { useLockScroll } from '../../hooks/useLockScroll'
 import ImageSlider from '../ImageSlider/ImageSlider'
 import styles from './HotelDetails.module.scss'
 
@@ -53,6 +54,8 @@ const HotelDetails = () => {
       setSelectedImageIndex(photos.length - 1) // loop to end
     }
   }
+
+  useLockScroll(showImageSlider) // lock scroll when Image Slider is open
 
   return (
     <div className={styles.container}>
