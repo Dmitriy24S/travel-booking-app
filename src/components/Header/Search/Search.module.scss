@@ -6,7 +6,8 @@
   padding: 10px;
   border-radius: 14px;
   // outline: 5px solid var(--blueLight);
-  outline: 8px solid var(--yellow);
+  // outline: 8px solid var(--yellow);
+  box-shadow: 0 0 0 8px var(--yellow);
   background-color: var(--light);
   position: absolute;
   z-index: 1;
