@@ -1,13 +1,18 @@
 import { useNavigate } from 'react-router-dom'
+import { IHotel } from '../HotelList'
 import styles from './ListResult.module.scss'
 
-const ListResult = ({ data }: { data: any }) => {
+const ListResult = ({ data }: { data: IHotel[] }) => {
   const navigate = useNavigate()
 
   return (
     <div className={styles.list}>
-      {data.map((item: any, index: number) => (
-        <div className={styles.item} key={item.title}>
+      {data.map((item: IHotel, index: number) => (
+        <div
+          // key={item.id}
+          key={index}
+          className={styles.item}
+        >
           <img
             src='https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1'
             alt=''
@@ -15,25 +20,21 @@ const ListResult = ({ data }: { data: any }) => {
             loading='lazy'
           />
           <div className={styles.details}>
-            <h1 className={styles.tname}>Tower Street Apartments</h1>
-            <p className={styles.distance}>500m from center</p>
-            <p className={styles.taxi}>Free airport taxi</p>
-            <p className={styles.subtitle}>Studio Apartment with Air conditioning</p>
-            <p className={styles.features}>
-              Entire studio • 1 bathroom • 21m² 1 full bed
-            </p>
-            <p className={styles.cancelation}>Free cancellation </p>
-            <p className={styles.cancelationSubtitle}>
-              You can cancel later, so lock in this great price today!
-            </p>
+            <h1 className={styles.name}>{item.name}</h1>
+            <p className={styles.distance}>{item.distance}</p>
+            <p className={styles.taxi}>{item.taxi}</p>
+            <p className={styles.subtitle}>{item.subtitle}</p>
+            <p className={styles.features}>{item.features}</p>
+            <p className={styles.cancelation}>{item.cancelation} </p>
+            <p className={styles.cancelationSubtitle}>{item.cancelationSubtitle} </p>
           </div>
           <div className={styles.cardFooter}>
             <div className={styles.ratingContainer}>
-              <div className={styles.rating}>8.9</div>
-              <p className={styles.ratingText}>Excellent</p>
+              <div className={styles.rating}>{item.rating}</div>
+              <p className={styles.ratingText}>{item.ratingText}</p>
             </div>
             <div className={styles.priceContainer}>
-              <p className={styles.price}>$112</p>
+              <p className={styles.price}>{item.price}</p>
               {/* <span className='siTaxOp'>Includes taxes and fees</span> */}
             </div>
           </div>

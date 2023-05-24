@@ -71,6 +71,8 @@ const data = [
   },
 ]
 
+export type IHotel = (typeof data)[0]
+
 const List = () => {
   return (
     <div className={styles.listContainer}>

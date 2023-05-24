@@ -16,8 +16,9 @@
     place-items: center;
 
     .sliderImage {
-      width: 80%;
-      height: 80%;
+      // width: 80%;
+      max-width: 92%;
+      // height: 80%;
       max-height: unset;
       margin: 0 auto;
       overflow: hidden;
