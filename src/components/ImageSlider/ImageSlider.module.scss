@@ -23,6 +23,9 @@
       margin: 0 auto;
       overflow: hidden;
       cursor: unset;
+      @media (min-width: 800px) {
+        max-width: 75%;
+      }
     }
 
     button {
