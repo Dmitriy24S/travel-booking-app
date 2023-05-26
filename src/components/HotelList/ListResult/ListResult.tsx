@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IHotel } from '../HotelList'
 import styles from './ListResult.module.scss'
 
@@ -20,7 +20,9 @@ const ListResult = ({ data }: { data: IHotel[] }) => {
             loading='lazy'
           />
           <div className={styles.details}>
-            <h1 className={styles.name}>{item.name}</h1>
+            <Link to={`/hotels/${index}`}>
+              <h1 className={styles.name}>{item.name}</h1>
+            </Link>
             <p className={styles.distance}>{item.distance}</p>
             <p className={styles.taxi}>{item.taxi}</p>
             <p className={styles.subtitle}>{item.subtitle}</p>

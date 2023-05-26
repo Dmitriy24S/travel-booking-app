@@ -109,6 +109,11 @@ input[type='search']::-webkit-search-decoration {
   color: var(--light);
   border-radius: 5px;
   padding: 0.7rem;
+  &:hover,
+  &:focus-visible {
+    // opacity: 0.9;
+    background-color: lighten(#0063f3, 3%);
+  }
 }
 
 .dateRangeContainer {

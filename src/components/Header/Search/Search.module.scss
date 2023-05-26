@@ -107,6 +107,10 @@
     background-color: #0063f3;
     color: var(--light);
     border-radius: 5px;
+    &:hover,
+    &:focus-visible {
+      opacity: 0.9;
+    }
   }
 
   span {
@@ -121,4 +125,9 @@
   color: var(--light);
   border-radius: 10px;
   padding: 0.7rem;
+  &:hover,
+  &:focus-visible {
+    opacity: 0.9;
+  }
+  // TODO: refactor repeat styles
 }
